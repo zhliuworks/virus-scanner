@@ -6,15 +6,18 @@ Our scanner performs inference based on trained ML model. The training script is
 
 ### Install
 
-You need to install [PyInstaller](https://github.com/pyinstaller/pyinstaller) before installing our tool.
+You need to install scikit-learn and [PyInstaller](https://github.com/pyinstaller/pyinstaller) before installing our tool.
 
 ```shell
+pip install sklearn
 pip install pyinstaller
 ```
 
 Then,
 
 ```shell
+git clone https://github.com/zhliuworks/virus-scanner.git
+cd virus-scanner/MLscanner
 make
 ```
 
