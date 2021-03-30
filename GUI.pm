@@ -437,9 +437,9 @@ sub add_analysis_panels {
             image       => 'folder-documents',
             button      => FALSE,
         },
-        {   link        => _( 'new scanner' ),
+        {   link        => _( 'MLScanner' ),
             description => _( 'our new scan' ),
-            image       => 'folder-documents',
+            image       => 'MLScanner',
             button      => FALSE,
         },
     );
@@ -461,6 +461,11 @@ sub add_analysis_panels {
         {   link        => _( 'Analysis' ),
             description => _( "View a file's reputation" ),
             image       => 'system-search',
+            button      => FALSE,
+        },
+        {   link        => _( 'About Team6' ),
+            description => _( "Info of Team6" ),
+            image       => 'gtk-new',
             button      => FALSE,
         },
     );
@@ -541,10 +546,13 @@ sub iconview_react {
     } elsif ( $value eq _( 'Analysis' ) ) {
         ClamTk::Analysis->show_window;
         return TRUE;
+    } elsif ( $value eq _( 'About Team6' ) ) {
+        about_team6();
+        return TRUE;
     } elsif ( $value eq _( 'Scan a file' ) ) {
         select_file();
         return TRUE;
-    } elsif ( $value eq _( 'newscanner' ) ) {
+    } elsif ( $value eq _( 'MLScanner' ) ) {
         system('./scanner');
         return TRUE;
     } elsif ( $value eq _( 'Scan a directory' ) ) {
@@ -734,4 +742,39 @@ sub about {
     $dialog->destroy;
 }
 
+sub about_team6 {
+    my $dialog = Gtk3::AboutDialog->new;
+    my $license
+        = 'ClamTk is free software; you can redistribute it and/or'
+        . ' modify it under the terms of either:'
+        . ' a) the GNU General Public License as published by the Free'
+        . ' Software Foundation; either version 1, or (at your option)'
+        . ' any later version, or'
+        . ' b) the "Artistic License".';
+    $dialog->set_wrap_license( TRUE );
+    $dialog->set_position( 'mouse' );
+
+    my $images_dir = ClamTk::App->get_path( 'images' );
+    my $icon       = "$images_dir/shield.png";
+    my $pixbuf     = Gtk3::Gdk::Pixbuf->new_from_file( $icon );
+
+    $dialog->set_logo( $pixbuf );
+    $dialog->set_version( ClamTk::App->get_TK_version() );
+    $dialog->set_license( $license );
+    $dialog->set_website_label( _( 'MLScanner' ) );
+    $dialog->set_website( 'https://github.com/zhliuworks/virus-scanner' );
+    $dialog->set_logo( $pixbuf );
+    $dialog->set_translator_credits(
+        'Please see the credits.md for full listing' );
+    $dialog->set_copyright( "\x{a9} Dave M 2004 - 2021" );
+    $dialog->set_program_name( 'ClamTk' );
+    $dialog->set_authors( [ 'Liu Zihan', 'Xia Zichao', 'Li Jinghao', 'Chen Tianrui','Shao Yu'],
+                           );
+    $dialog->set_comments(
+        _( 'ClamTk is a graphical front-end for Clam Antivirus' ) );
+
+    $dialog->run;
+    $dialog->destroy;
+}
 1;
+

@@ -6,3 +6,6 @@ Project for Computer Virus (SJTU-IS217) Group 6
 
 * ClamAV GUI modification
 
+ Diretory of GUI.pm
+
+- /usr/share/perl5/ClamTk
