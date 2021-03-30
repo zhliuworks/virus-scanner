@@ -9,3 +9,5 @@ Project for Computer Virus (SJTU-IS217) Group 6
  Diretory of GUI.pm
 
 - /usr/share/perl5/ClamTk
+ Diretory of shield.png
+- /usr/share/pixmaps
