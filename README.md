@@ -6,6 +6,12 @@ Project for Computer Virus (SJTU-IS217) Group 6
 
 * ClamAV GUI modification
 
+NOTICE:
+The folder must have **scanner**
+e.g. file:///home/virus-scanner/MLscanner
+
+
+About GUI:
  Directory of GUI.pm
 - /usr/share/perl5/ClamTk
 
