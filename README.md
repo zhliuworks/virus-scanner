@@ -6,8 +6,10 @@ Project for Computer Virus (SJTU-IS217) Group 6
 
 * ClamAV GUI modification
 
- Diretory of GUI.pm
-
+ Directory of GUI.pm
 - /usr/share/perl5/ClamTk
- Diretory of shield.png
+
+ Directory of shield.png
 - /usr/share/pixmaps
+
+Don't forget "chmod" before putting into the folder
