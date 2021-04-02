@@ -2,7 +2,7 @@
 
 Project for Computer Virus (SJTU-IS217) Group 6
 
-<img src="https://github.com/zhliuworks/virus-scanner/blob/main/diagram.jpg" alt="diagram" style="zoom: 10%;" />
+<img src="https://github.com/zhliuworks/virus-scanner/blob/main/diagram.jpg" alt="diagram" style="zoom: 8%;" />
 
 * [MLscanner](https://github.com/zhliuworks/virus-scanner/tree/main/MLscanner)
 
